@@ -1,0 +1,24 @@
+.row{
+    padding: 50px;
+}
+
+div{
+    text-align: center;
+    /* font-family: 'Cambria', monospace; */
+    /* background-color:  #f6e0b0; */
+}
+
+img{
+    position: relative;
+    width: 200px;
+    margin-top: -150px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    border: 2px solid rgb(209, 209, 209);
+}
+
+#name{
+    font-weight: bold;
+    font-size: 20px;
+
+}
