@@ -9,13 +9,12 @@ import { NewExperienceComponent } from './components/work-xp/new-experience.comp
 
 const routes: Routes = [
 
-  {path: '', component: LoginComponent},
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
+  {path: 'login', component: LoginComponent},  
   {path: 'newXp', component: NewExperienceComponent},
   {path: 'editXp/:id', component: EditXpComponent},
   {path: 'newEducation', component: NewEducationComponent},
   {path: 'editEducation/:id', component: EditEducationComponent},
-  {path: '**', redirectTo: 'login'}
 ];
 
 @NgModule({
