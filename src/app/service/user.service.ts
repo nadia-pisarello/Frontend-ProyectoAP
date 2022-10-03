@@ -9,7 +9,7 @@ import { user } from '../model/user.model';
   providedIn: 'root'
 })
 export class UserService {
-  private readonly URL = environment.URL;
+  private readonly URL = environment.URL + '/user';
   constructor(private httpClient: HttpClient) { }
   public getUser(): Observable<user>{
     return this.httpClient.get<user>(`${this.URL}get/profile`);
