@@ -1,9 +1,8 @@
-export class Skill {
-    id: number;
+export class Skill{
+    id?: number;
     name: string;
-    constructor(name: string) {
-        this.name;
-        
+
+    constructor(name: string){
+        this.name= name;
     }
-    
 }

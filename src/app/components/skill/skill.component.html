@@ -1,0 +1,35 @@
+<div class="row">
+
+    <h1>Hard & Soft skills</h1>
+    <div class="col-lg-2">
+        <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Add Skill</button>
+    </div>
+
+    <div>
+        <td *ngIf="isLogged">
+            <button class="btn btn-light" routerLink="/editskill/{{skill.id}}">
+                <i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td *ngIf="isLogged">
+            <button class="btn btn-danger" (click)="delete(skill.id)">
+                <i class="bi bi-trash-fill"></i></button>
+        </td>
+    </div>
+
+</div>
+
+<div class="container" *ngIf="skill">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="name">Skill</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="skill.name" required>
+                </div>
+                <button class="btn btn-primary">
+                    Update
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
