@@ -25,15 +25,6 @@ export class SkillComponent implements OnInit {
       this.isLogged = false;
     }
 
-    // const id = this.activatedRoute.snapshot.params['id'];
-    // this.skillS.detail(id).subscribe(
-    //   data => {
-    //     this.skill = data;
-    //   }, err => {
-    //     alert("Error al modificar");
-    //     this.router.navigate(['']);
-    //   }
-    // )
   }
 
   loadSkills(): void {

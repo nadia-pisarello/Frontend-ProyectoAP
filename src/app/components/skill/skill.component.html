@@ -15,7 +15,24 @@
                 <i class="bi bi-trash-fill"></i></button>
         </td>
     </div>
+    
+</div>
 
+<div class="container">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="name">Skill</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" required>
+                </div>
+                
+                <button class="btn btn-primary">
+                    Add skill
+                </button>
+            </form>
+        </div>
+    </div>
 </div>
 
 <div class="container" *ngIf="skill">
