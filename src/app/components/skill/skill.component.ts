@@ -13,6 +13,8 @@ export class SkillComponent implements OnInit {
   skillL: Skill[] = [];
   name: string;
   skill: Skill = null;
+  _isEdit: boolean = false;
+  _isCreate: boolean = false;
 
   constructor(private skillS: SkillService, private tokenService: TokenService, private router: Router, private activatedRoute: ActivatedRoute) { }
   isLogged = false;
@@ -47,6 +49,7 @@ export class SkillComponent implements OnInit {
     }
   }
   onCreate(): void {
+    
     const skillK = new Skill(this.name);
     this.skillS.save(skillK).subscribe(
       data => {
@@ -57,9 +60,11 @@ export class SkillComponent implements OnInit {
         this.router.navigate(['']);
       }
     )
+    this._isCreate = true;
   }
 
   onUpdate(){
+    
     const id = this.activatedRoute.snapshot.params['id'];
     this.skillS.update(id, this.skill).subscribe(
       data => {
@@ -69,6 +74,7 @@ export class SkillComponent implements OnInit {
         this.router.navigate(['']);
       }
     )
+    this._isEdit = true;
   }
 
 }
