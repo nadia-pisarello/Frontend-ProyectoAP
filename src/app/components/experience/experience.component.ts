@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Experience } from 'src/app/model/experience';
 import { PortfolioService } from 'src/app/service/portfolio.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-experience',
@@ -10,20 +11,23 @@ import { PortfolioService } from 'src/app/service/portfolio.service';
 })
 export class ExperienceComponent implements OnInit {
   portfolio: Experience[] = [];
+  _isLogged: boolean = false;
+  _isNew: boolean = false;
   form: FormGroup;
-  constructor(public experiencePort: PortfolioService) { 
-    this.form = new FormGroup({
-      position: new FormControl(['', [Validators.required, Validators.minLength(5)]]),
-      description: new FormControl(['',[Validators.required, Validators.minLength(10),Validators.maxLength(100)]])
-    })
-  }
+  
+  constructor(private experiencePort: PortfolioService, private token: TokenService) { }
 
   ngOnInit(): void {
-    this.experiencePort.getExperienceData().subscribe(data => {
-      console.log("DATA: " + JSON.stringify(data));
-      this.portfolio = data;
-      console.log(data);
-    })
+    this.loadExperience();
+    if(this.token.getToken()) this._isLogged = true;
+  }
+
+  loadExperience(): void{
+    this.experiencePort.getExperienceData().subscribe(data => {this.portfolio = data;})
+  }
+  
+  onCreate(event: Event){
+    
   }
 
 }

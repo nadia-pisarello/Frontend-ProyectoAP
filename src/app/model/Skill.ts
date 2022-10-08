@@ -1,4 +1,8 @@
 export class Skill{
-    tech: String;
-    image: String;
+    tech: string;
+    image: string;
+    constructor(tech: string, image: string){
+        this.tech= tech;
+        this.image= image;
+    }
 }

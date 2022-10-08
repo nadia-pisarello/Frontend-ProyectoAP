@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { interceptorProvider } from './service/interceptor-provider.service';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { EducationComponent } from './components/education/education.component';
+import { SkillComponent } from './components/skill/skill.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,13 @@ import { EducationComponent } from './components/education/education.component';
     LoginComponent,
     ExperienceComponent,
     EducationComponent,
+    SkillComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
+    FormsModule, 
     HttpClientModule,
+    AppRoutingModule,       
     ReactiveFormsModule
   ],
   providers: [interceptorProvider],
