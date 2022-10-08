@@ -1,10 +1,6 @@
 export class Education {
-    id: number;
-    nameE : string;
-    descriptionE: string;
+    id: Number;
+    title : String;
+    description: String;
 
-    constructor(nameE: string, descriptionE: string){
-        this.nameE = nameE;
-        this.descriptionE = descriptionE;
-    }
 }

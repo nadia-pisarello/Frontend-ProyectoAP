@@ -3,10 +3,12 @@
         <h4 class="text-start p-1 bg-dark text-light  rounded border p-2">Experiencia Laboral</h4>
     </div>
     <div class="row">
-        <div class="contenedor">
-            <div class="ng-for-block" *ngFor="let datum of [1]">
-                🤔💥⁉
-            </div>
+        <div class="ng-for-block" *ngFor="let Experiencia of portfolio">
+            {{Experiencia.position}}
+            {{Experiencia.description}}
+            🤔💥⁉
         </div>
+        
+        🤔💥⁉
     </div>
 </div>

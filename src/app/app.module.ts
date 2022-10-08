@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { interceptorProvider } from './service/interceptor-provider.service';
 import { ExperienceComponent } from './components/experience/experience.component';
+import { EducationComponent } from './components/education/education.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
     HomeComponent,
     LoginComponent,
     ExperienceComponent,
+    EducationComponent,
   ],
   imports: [
     BrowserModule,
