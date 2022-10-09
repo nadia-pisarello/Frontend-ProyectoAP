@@ -1,10 +1,9 @@
 export class Experience {
-    id? : number;
-    position: string;
-    description: string;
-
-    constructor(position: string, description: string){
-        this.position = position;
-        this.description = description;
+    id?: number;
+    xpName: string;
+    descripXp: string;
+    constructor(xpName: string, descripXp: string){
+        this.xpName = xpName;
+        this.descripXp = descripXp;
     }
 }

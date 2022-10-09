@@ -14,20 +14,27 @@ export class ExperienceComponent implements OnInit {
   _isLogged: boolean = false;
   _isNew: boolean = false;
   form: FormGroup;
-  
-  constructor(private experiencePort: PortfolioService, private token: TokenService) { }
 
-  ngOnInit(): void {
+  constructor(public experiencePort: PortfolioService, private token: TokenService) {
+    this.form = new FormGroup({
+      xpName: new FormControl(['', [Validators.required, Validators.minLength(5)]]),
+      descripXp: new FormControl(['', [Validators.required, Validators.minLength(5)]])
+    })
+  }
+
+
+  public ngOnInit(): void {
     this.loadExperience();
-    if(this.token.getToken()) this._isLogged = true;
+    if (this.token.getToken()) this._isLogged = true;
   }
+  public loadExperience() {
+    this.experiencePort.getExperienceData().subscribe(data => {
+      this.portfolio = data;
+      console.log(this.portfolio);
+    })
+  }
+  onCreate(event: Event) {
 
-  loadExperience(): void{
-    this.experiencePort.getExperienceData().subscribe(data => {this.portfolio = data;})
-  }
-  
-  onCreate(event: Event){
-    
   }
 
 }

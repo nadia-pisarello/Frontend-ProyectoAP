@@ -1,14 +1,12 @@
 <div class="container shadow bg-gradient">
-    <div class="row mt-3">
+    <div class="row">
         <h4 class="text-start p-1 bg-dark text-light  rounded border p-2">Experiencia Laboral</h4>
     </div>
     <div class="row">
-        <div *ngFor="let Experiencia of portfolio">
-            {{Experiencia.position}}
-            {{Experiencia.description}}
-            🤔💥⁉
+        <div class="ng-for-block" *ngFor="let Experience of portfolio">
+            {{ Experience.xpName }} <br>
+            {{ Experience.descripXp }}
+            
         </div>
-        
-        🤔💥⁉
     </div>
 </div>
