@@ -13,29 +13,23 @@ export class ExperienceComponent implements OnInit {
 
   portfolio: Experience[] = [];
   _isLogged: boolean = false;
-  _isNew: boolean = false;
   _isEdit: boolean = false;
   experience: Experience;
-  activatedRouter: ActivatedRoute;
-  xpId!: number;
   xpName: string;
   descripXp: string;
-  i!: number;
 
   constructor(public experiencePort: PortfolioService, private token: TokenService) {
 
   }
 
-
-  public ngOnInit(): void {
+  ngOnInit(): void {
     this.loadExperience();
     if (this.token.getToken()) {
       this._isLogged = true;
     } else this._isLogged = false;
-    
   }
 
-  public loadExperience() {
+  loadExperience() {
     this.experiencePort.getExperienceData().subscribe(data => {
       this.portfolio = data;
       console.log(this.portfolio);
@@ -53,8 +47,8 @@ export class ExperienceComponent implements OnInit {
       )
     }
   }
+
   onCreate(event: Event): void {
-    this._isNew = true;
     const NewExperience = new Experience(this.xpName, this.descripXp);
     this.experiencePort.postExperience(NewExperience).subscribe(
       data => {

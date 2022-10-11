@@ -10,22 +10,18 @@ import { PortfolioService } from 'src/app/service/portfolio.service';
 })
 export class EditExperienceComponent implements OnInit {
   experience: Experience = null;
-  
 
-  constructor(private experiencePort: PortfolioService, private activated: ActivatedRoute, private router: Router) { }
+  constructor(private experiencePort: PortfolioService, private activated: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     const id = this.activated.snapshot.params['id'];
     this.experiencePort.getOneExperience(id).subscribe(
-      data =>{
+      data => {
         this.experience = data;
-        
-      }, err =>{
-        alert("Failed operation");
-        this.router.navigate(['']);
       }
     )
-  
+
   }
 
   onUpdate() {
@@ -33,9 +29,6 @@ export class EditExperienceComponent implements OnInit {
     this.experiencePort.putExperience(id, this.experience).subscribe(
       data => {
         this.router.navigate(['']);
-      }, err =>{
-         alert("Error al modificar experiencia");
-         this.router.navigate(['']);
       }
     )
   }

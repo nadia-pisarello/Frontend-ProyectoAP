@@ -50,11 +50,11 @@ export class PortfolioService {
       return this.http.get<Education>( this.URL + '/education/' + id);
     }
      
-    getOneSkillData(id: number):Observable<Skill> {
+    getOneSkill(id: number):Observable<Skill> {
       return this.http.get<Skill>( this.URL + '/skill/' + id);
     }
 
-    getOneProyectData(id: number):Observable<Proyect> {
+    getOneProyect(id: number):Observable<Proyect> {
       return this.http.get<Proyect>( this.URL + '/proyect/' + id);
     }
   

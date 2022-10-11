@@ -2,12 +2,37 @@
     <div class="row mt-3">
         <h4 class="text-start p-1 bg-dark text-light  rounded border p-2">Hard & Soft Skills</h4>
     </div>
-    <div class="row">   
-        <!-- <div *ngFor="let Skill of portfolio">
-            {{Skill.tech}}
-            {{Skill.image}}
-            🤔💥⁉
-        </div>      -->
-        🤔💥⁉
+    <div class="row">
+        <div class="ng-for-block" *ngFor="let Skill of portfolio">
+            <div class="mb-md-2 mt-md-1 pb-1"><h5> {{ Skill.tech }} </h5></div>
+            <div class="mb-md-3 mt-md-2 pb-1"> {{ Skill.image }}</div>
+
+            <div *ngIf="_isLogged">
+                <button class="btn btn-light" routerLink="/editSkill/{{Skill.id}}">
+                    <i class="bi bi-pencil-fill"></i> Edit</button>
+
+                <button class="btn btn-danger" (click)="delete(Skill.id)">
+                    <i class="bi bi-trash-fill"></i> Delete</button>
+            </div>
+        </div>
+        <div class="row" *ngIf="_isLogged">
+            <div>
+                <form (ngSubmit)="onCreate($event)" novalidate #f="ngForm">
+                    <div class="form-group">
+                        <label for="tech">Tecnología/Habilidad</label>
+                        <input type="text" class="form-control" id="tech" name="tech" [(ngModel)]="tech" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Imagen</label>
+                        <input type="text" class="form-control" id="image" name="image" [(ngModel)]="image" required>
+                    </div>
+                    <button class="btn btn-primary mt-3">
+                        Add Skill
+                    </button>
+                </form>
+            </div>
+        </div>
+        😏💥🚀
     </div>
+
 </div>
