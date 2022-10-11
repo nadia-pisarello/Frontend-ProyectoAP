@@ -1,5 +1,5 @@
 export class Experience {
-    id?: number;
+    xpId?: number;
     xpName: string;
     descripXp: string;
     constructor(xpName: string, descripXp: string){

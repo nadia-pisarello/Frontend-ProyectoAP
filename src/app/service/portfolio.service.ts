@@ -24,99 +24,92 @@ export class PortfolioService {
     
     // ******************   |  GET ALL    | **************************
    
-    getEducationData():Observable<Education[]> {
-      return this.http.get<Education[]>( this.URL + '/education', {responseType: 'json'}).pipe(catchError(this.getEducationData));
-    }
-  
-  
-    public getExperienceData():Observable<Experience[]> {
+    getExperienceData():Observable<Experience[]> {
       return this.http.get<Experience[]>(`${this.URL}/experience/list`, {responseType: 'json'}).pipe(catchError(this.getExperienceData));
     }
   
-    getProyectData():Observable<Proyect[]> {
-      return this.http.get<Proyect[]>( this.URL + '/proyect', {responseType: 'json'}).pipe(catchError(this.getProyectData));
+    getEducationData():Observable<Education[]> {
+      return this.http.get<Education[]>( `${this.URL}/education/list`, {responseType: 'json'}).pipe(catchError(this.getEducationData));
     }
   
     getSkillData():Observable<Skill[]> {
-      return this.http.get<Skill[]>( this.URL + '/skill', {responseType: 'json'}).pipe(catchError(this.getSkillData));
+      return this.http.get<Skill[]>( `${this.URL}/skill/list`, {responseType: 'json'}).pipe(catchError(this.getSkillData));
     }
   
-   
+    getProyectData():Observable<Proyect[]> {
+      return this.http.get<Proyect[]>( `${this.URL}/proyect/list`, {responseType: 'json'}).pipe(catchError(this.getProyectData));
+    }
+
     // **************   |   METHOD'S GET ONE    | **************************
-  
-    getOneEducationData(id: number):Observable<Education> {
-      return this.http.get<Education>( this.URL + '/education/' + id);
-    }
   
     getOneExperience(id: number):Observable<Experience> {
       return this.http.get<Experience>( this.URL + "/experience/" + id);
     }
-  
+
+    getOneEducationData(id: number):Observable<Education> {
+      return this.http.get<Education>( this.URL + '/education/' + id);
+    }
+     
+    getOneSkillData(id: number):Observable<Skill> {
+      return this.http.get<Skill>( this.URL + '/skill/' + id);
+    }
+
     getOneProyectData(id: number):Observable<Proyect> {
       return this.http.get<Proyect>( this.URL + '/proyect/' + id);
     }
   
-    getOneSkillData(id: number):Observable<Skill> {
-      return this.http.get<Skill>( this.URL + '/skill/' + id);
-    }
-  
-  
     // **************   |   METHOD'S POST    | ******************************
  
-  
-    postEducation( Education: Education ):Observable<Education> {
-      return this.http.post<Education>( this.URL + '/education', Education , { headers: this.headers} );
-    }
-  
-    postExperiencia( Experience: Experience ):Observable<Experience> {
+    postExperience( Experience: Experience ):Observable<Experience> {
       return this.http.post<Experience>( this.URL + "/experience", Experience , { headers: this.headers} );
     }
   
-    postProyecto( Proyect: Proyect ):Observable<Proyect> {
-      return this.http.post<Proyect>( this.URL + '/proyect', Proyect , { headers: this.headers} );
-    }
+    postEducation( Education: Education ):Observable<Education> {
+      return this.http.post<Education>( this.URL + '/education', Education , { headers: this.headers} );
+    }  
   
     postSkill( Skill: Skill ):Observable<Skill> {
       return this.http.post<Skill>( this.URL + '/skill', Skill , { headers: this.headers} );
     }
-  
+   
+    postProyecto( Proyect: Proyect ):Observable<Proyect> {
+      return this.http.post<Proyect>( this.URL + '/proyect', Proyect , { headers: this.headers} );
+    }
     // **************   |   METHOD'S PUT    | ******************************
   
-    putExperiencia( Experience: Experience, i: Number  ):Observable<Experience> {
-      return this.http.put<Experience>( this.URL + "/experience/" + i, Experience , { headers: this.headers} );
+    putExperience( id: Number, Experience: Experience ):Observable<Experience> {
+      return this.http.put<Experience>( this.URL + "/experience/" + id, Experience , { headers: this.headers} );
     }
-  
-    putEducation( Education: Education, id: Number  ):Observable<Education> {
+      
+    putEducation( id: Number, Education: Education ):Observable<Education> {
       return this.http.put<Education>( this.URL + '/education/' + id, Education , { headers: this.headers} );
     }
   
-    putProyecto( Proyect: Proyect, id: Number  ):Observable<Proyect> {
+    putSkill( id: Number, Skill: Skill ):Observable<Skill> {
+      return this.http.put<Skill>( this.URL + '/skill/' + id, Skill , { headers: this.headers} );
+    }
+
+    putProyecto( id: Number, Proyect: Proyect ):Observable<Proyect> {
       return this.http.put<Proyect>( this.URL + '/proyect/' + id, Proyect , { headers: this.headers} );
     }
   
-    putSkill( Skill: Skill, id: Number  ):Observable<Skill> {
-      return this.http.put<Skill>( this.URL + '/skill/' + id, Skill , { headers: this.headers} );
-    }
-  
-  
+    
     // **************   |   METHOD'S DELETE    | ***************************
-  
-
-  
-    deleteEducation( id: Number ):Observable<Education> {
-      return this.http.delete<Education>( this.URL + '/education/' + id , { headers: this.headers} );
-    }
   
     deleteExperience( id: Number ):Observable<Experience> {
       return this.http.delete<Experience>( this.URL + '/experience/' + id ,  { headers: this.headers} );
     }
   
-    deleteProyect( id: Number ):Observable<Proyect> {
-      return this.http.delete<Proyect>( this.URL + '/proyect/' + id ,  { headers: this.headers} );
+    deleteEducation( id: Number ):Observable<Education> {
+      return this.http.delete<Education>( this.URL + '/education/' + id , { headers: this.headers} );
     }
   
     deleteSkill( id: Number ):Observable<Skill> {
       return this.http.delete<Skill>( this.URL + '/skill/' + id ,  { headers: this.headers} );
+    }
+  
+    deleteProyect( id: Number ):Observable<Proyect> {
+      return this.http.delete<Proyect>( this.URL + '/proyect/' + id ,  { headers: this.headers} );
     }
   
   

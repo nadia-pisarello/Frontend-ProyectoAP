@@ -14,6 +14,10 @@ import { LoginComponent } from './components/login/login.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { EducationComponent } from './components/education/education.component';
 import { SkillComponent } from './components/skill/skill.component';
+import { EditExperienceComponent } from './components/experience/edit-experience.component';
+import { EditEducationComponent } from './components/education/edit-education.component';
+import { EditSkillComponent } from './components/skill/edit-skill.component';
+import { EditProyectComponent } from './components/proyect/edit-proyect.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,10 @@ import { SkillComponent } from './components/skill/skill.component';
     ExperienceComponent,
     EducationComponent,
     SkillComponent,
+    EditExperienceComponent,
+    EditEducationComponent,
+    EditSkillComponent,
+    EditProyectComponent,
   ],
   imports: [
     BrowserModule,
