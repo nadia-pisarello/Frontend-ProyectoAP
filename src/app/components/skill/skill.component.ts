@@ -55,6 +55,15 @@ export class SkillComponent implements OnInit {
       }
     )
   }
- 
-  
+
+  selectFile(event: Event){
+    let file = (<HTMLInputElement>event.target).files[0];
+    if(file.type == "image/jpg" || file.type == "image/jpge"){
+      this.skill = new Skill(file.name, file.type);
+    }
+  }
+
+  uploadFile(event: Event) {
+    this.skillService.postSkill(this.skill).subscribe(Response=> {});
+  }
 }
