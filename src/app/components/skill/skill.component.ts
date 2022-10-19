@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Skill } from 'src/app/model/skill';
 import { PortfolioService } from 'src/app/service/portfolio.service';
@@ -54,4 +55,6 @@ export class SkillComponent implements OnInit {
       }
     )
   }
+ 
+  
 }
