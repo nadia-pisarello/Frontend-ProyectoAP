@@ -32,10 +32,14 @@ export class UpdateAboutComponent implements OnInit {
     )
   }
 
-  uploadFile($event: any){
+  selectFile($event: any){
     const id = this.activated.snapshot.params['id'];
     const name = 'profile_'+ id ;
     this.uploadService.uploadFile($event,name);
   }
+
+  // onUpload(){
+    
+  // }
 }
 
