@@ -12,7 +12,7 @@ import { Skill } from '../model/skill';
 })
 export class PortfolioService {
 
-  private readonly URL = 'http://localhost:8080/api/v1';
+  private readonly URL = 'https://herobackenap.herokuapp.com/api/v1';
 
     // Headers =>>> POST, PUT Y DELETE.
     headers = new HttpHeaders({

@@ -11,7 +11,7 @@ import { NewUser } from '../model/new-user';
   providedIn: 'root'
 })
 export class AuthService {
-  URL = 'http://localhost:8080/api/v1';
+  URL = 'https://herobackenap.herokuapp.com/api/v1';
   constructor(private httpClient: HttpClient) {}
 
   public new(newUser: NewUser): Observable<any>{
