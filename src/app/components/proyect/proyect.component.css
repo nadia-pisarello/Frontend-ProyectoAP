@@ -4,8 +4,14 @@
 .contenedor{
     width: auto;
 }
-
+button{
+    margin-left: 5px;
+}
 .parte1, .parte2{
     display: inline-block;
     text-align: justify;
+}
+
+div{
+    background-color:  #ebdcbc;
 }

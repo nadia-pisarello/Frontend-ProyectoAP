@@ -2,6 +2,12 @@
     padding: 15px;
     
 }
+button{
+    margin-left: 5px;
+}
 .contenedor{
     width: auto;
+}
+div{
+    background-color:  #ebdcbc;
 }

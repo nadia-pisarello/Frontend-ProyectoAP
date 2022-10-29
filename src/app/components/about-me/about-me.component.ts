@@ -10,6 +10,7 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class AboutMeComponent implements OnInit {
   _isLogged: boolean = false;
+  _isExists: boolean = false;
   profile: Profile = new Profile("","","","","");
   constructor(public profileServ: PortfolioService, private token: TokenService) { }
 
@@ -21,7 +22,8 @@ export class AboutMeComponent implements OnInit {
   }
 
   loadUser(){
-    this.profileServ.getOneProfile(1).subscribe(data => {this.profile = data})
+    this.profileServ.getOneProfile(1).subscribe(data => {this.profile = data});
+    this._isExists = true;
   }
 
 }

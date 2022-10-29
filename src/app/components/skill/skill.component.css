@@ -4,3 +4,9 @@
 .contenedor{
     width: auto;
 }
+div{
+    background-color:  #ebdcbc;
+}
+button{
+    margin-left: 5px;
+}

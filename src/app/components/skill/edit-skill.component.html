@@ -17,9 +17,9 @@
                   </div>
   
                   <div class="form-outline form-white mb-5">
-                    <input type="file" (change)="selectFile($event)" id="image" name="image" class="form-control form-control-lg"
+                    <input type="url" (change)="selectFile($event)" id="url" name="url" class="form-control form-control-lg"
                       [(ngModel)]="skill.image" requiered />
-                    <label class="form-label" for="image">Imagen</label>
+                    <label class="form-label" for="image">Link imagen</label>
                   </div>
   
                   <button class="btn btn-outline-light btn-lg px-5" type="submit">Update</button>

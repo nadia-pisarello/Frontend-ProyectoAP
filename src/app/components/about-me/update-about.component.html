@@ -33,10 +33,10 @@
                     <label class="form-label" for="description">Description</label>
                   </div>
                   <div class="form-outline form-white mb-4">
-                    <input type="file" id="file" name="file" class="form-control form-control-lg"
-                    [(ngModel)]="profile.image" (change)="selectFile($event)" accept=".jpg, .jpge, .png"/>
+                    <input type="url" id="url" name="url" class="form-control form-control-lg"
+                    [(ngModel)]="profile.image" (change)="selectFile($event)" />
                     <!-- <button type="button" (click)="onUpload">Upload</button>   -->
-                    <label class="form-label" for="description">Profile image</label>
+                    <label class="form-label" for="description">Link image</label>
                   </div>
                   <div>
                     <img [src]="uploadService.url" width="150px">

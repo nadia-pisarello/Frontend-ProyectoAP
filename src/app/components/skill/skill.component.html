@@ -4,12 +4,17 @@
     </div>
     <div class="row">
         <div class="ng-for-block" *ngFor="let Skill of portfolio">
-            <div class="mb-md-2 mt-md-1 pb-1"><h5> {{ Skill.tech }} </h5></div>
-            <div class="mb-md-3 mt-md-2 pb-1" > <img src={{Skill.image}} alt="logo skill"></div>
-
-            <div *ngIf="_isLogged">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <h5> {{ Skill.tech }} </h5>
+                </div>
+                <div class="col-2">
+                    <img src={{Skill.image}} alt="logo skill" width="50px">
+                </div>
+            </div>
+            <div class="float-end" *ngIf="_isLogged">
                 <button class="btn btn-light" routerLink="/editSkill/{{Skill.id}}">
-                    <i class="bi bi-pencil-fill -mtmt-3" ></i> Edit</button>
+                    <i class="bi bi-pencil-fill mtmt-3"></i> Edit</button>
 
                 <button class="btn btn-danger" (click)="delete(Skill.id)">
                     <i class="bi bi-trash-fill mt-mb-3"></i> Delete</button>
@@ -17,18 +22,18 @@
         </div>
         <div class="row" *ngIf="_isLogged">
             <div>
-                
+
                 <form (ngSubmit)="onCreate($event)" novalidate #f="ngForm" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="tech">Tecnología/Habilidad</label>
                         <input type="text" class="form-control" id="tech" name="tech" [(ngModel)]="tech" required
-                        placeholder="Ingresar tecnología o habilidad">
+                            placeholder="Ingresar tecnología o habilidad">
                     </div>
-                    <div class="form-group mt-2" >
+                    <div class="form-group mt-2">
                         <label for="image">Imagen</label>
-                        <input type="file"  (change)="selectFile($event)" class="form-control" 
-                        [(ngModel)]="image" name="image" accept=".jpg, .jpge, .png" required>
-                        
+                        <input type="url" (change)="selectFile($event)" class="form-control" [(ngModel)]="image"
+                            name="url" required>
+
                     </div>
                     <button class="btn btn-primary mt-3">
                         Add Skill
