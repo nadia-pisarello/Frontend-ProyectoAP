@@ -9,7 +9,7 @@
             <div class="mb-md-3 mt-md-2 pb-1">{{Education.descriptionE}}</div>
 
             <div *ngIf="_isLogged">
-                <button class="btn btn-light" routerLink="/editExperience/{{Education.id}}">
+                <button class="btn btn-light" routerLink="/editEducation/{{Education.id}}">
                     <i class="bi bi-pencil-fill"></i> Edit</button>
                    
                 <button class="btn btn-danger" (click)="delete(Education.id)">
