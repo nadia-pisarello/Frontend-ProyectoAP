@@ -1,1 +1,38 @@
-<p>edit-proyect works!</p>
+<section *ngIf="proyect">
+    <div class="container py-4 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <div class="mb-md-3 mt-md-3 pb-4">
+  
+                <h2 class="fw-bold mb-2 text-uppercase">Edit Proyect</h2>
+  
+                <form #f="ngForm" (ngSubmit)="onUpdate()" novalidate >
+                  <div class="form-outline form-white mb-2">
+                    <input type="text" id="itle" name="title" class="form-control form-control-lg"
+                      [(ngModel)]="proyect.title" required= />
+                    <label class="form-label" for="tech">Proyect</label>
+                  </div>
+                  <div class="form-outline form-white mb-2">
+                    <input type="text" id="description" name="description" class="form-control form-control-lg"
+                      [(ngModel)]="proyect.description" required= />
+                    <label class="form-label" for="tech">Description</label>
+                  </div>
+                  <div class="form-outline form-white mb-5">
+                    <input type="url" (change)="selectFile($event)" id="url" name="url" class="form-control form-control-lg"
+                      [(ngModel)]="proyect.image" requiered />
+                    <label class="form-label" for="image">Link repository</label>
+                  </div>
+  
+                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Update</button>
+                </form>
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
