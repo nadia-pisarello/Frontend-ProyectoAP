@@ -1,7 +1,7 @@
 # PortfolioNP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.7
-for the "Argentina program" course.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli)
+version 14.0.7 for the "Argentina program" course.
 
 ## Development server
 
